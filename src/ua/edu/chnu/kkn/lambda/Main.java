@@ -45,8 +45,9 @@ public class Main {
         System.out.println(calculator.doCalc(4, 5, new Multiply()));
         System.out.println(calculator.doCalc(4, 5, new Division()));
         // 2. lambda expressions
-        System.out.println(calculator.doCalc(4, 5, (a1, a2) -> a1 + a2));
-        System.out.println(calculator.doCalc(4, 5, (a1, a2) -> a1 - a2));
+        Operation subtract = (a1, a2) -> a1 - a2;
+        System.out.println(calculator.doCalc(4, 5, Double::sum));
+        System.out.println(calculator.doCalc(4, 5, subtract));
         System.out.println(calculator.doCalc(4, 5, (a1, a2) -> a1 * a2));
         System.out.println(calculator.doCalc(4, 5, (a1, a2) -> a1 / a2));
     }
